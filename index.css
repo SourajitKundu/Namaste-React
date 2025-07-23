@@ -1,3 +1,43 @@
-#heading {
-  color: red;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+  z-index: 999;
+  height: 5rem;
+  overflow: hidden;
+}
+.header > .logo-container {
+  height: 100%;
+}
+.header .logo {
+  height: 100%;
+  object-fit: contain;
+}
+.header > .nav-items > ul {
+  display: flex;
+  gap: 50px;
+  list-style-type: none;
+  margin-right: 50px;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  width: 90%;
+  margin: auto;
+}
+
+.res-card {
+  width: 20%;
+  margin: 5px 5px 25px 5px;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+.res-card > .res-logo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center center;
 }
