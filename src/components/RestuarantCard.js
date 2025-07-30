@@ -16,19 +16,24 @@
 }*/
 
 //After Optimising
+import { constUrl } from "../utils/constants";
 
 const RestuarantCard = (props) => {
   const { resData } = props;
-  const { name, cuisine, rating, image } = resData?.info || {}; //saves crashing even if resData or resData.info is missing by returning empty array
-  const distance = resData?.distance;
+  const { cloudinaryImageId, name, cuisines, avgRating, areaName } =
+    resData?.info || {}; //saves crashing even if resData or resData.info is missing by returning empty array
 
   return (
     <div className="res-card">
-      <img alt="res-logo" className="res-logo" src={image.url} />
+      <img
+        alt="res-logo"
+        className="res-logo"
+        src={constUrl + cloudinaryImageId}
+      />
       <h3>{name}</h3>
-      <h4>{cuisine.map((c) => c.name).join(", ")}</h4>
-      <h4>{rating.aggregate_rating}</h4>
-      <h4>{distance}</h4>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating}</h4>
+      <h4>{areaName}</h4>
     </div>
   );
 };
